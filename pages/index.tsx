@@ -55,20 +55,25 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.grid}>
+        <div>
+          <h1 className="text-3xl md:text-6xl font-normal text-center leading-normal mt-0 mb-2 text-gray-800">
+            Solana NFT Gallery
+          </h1>
           <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={wallets} autoConnect>
               <WalletModalProvider>
-                <WalletMultiButton />
                 <GalleryView />
-                <WalletDisconnectButton />
+                <div className="gap-8 flex  flex-col justify-center place-items-center	">
+                  <WalletMultiButton className="wallet-adapter-button-trigger justify-center" />
+                  <WalletDisconnectButton />
+                </div>
               </WalletModalProvider>
             </WalletProvider>
           </ConnectionProvider>
         </div>
       </main>
 
-      <footer className={styles.footer}>footer</footer>
+      <footer className={styles.footer}>Made with ❤️ by Maxi</footer>
     </div>
   );
 };

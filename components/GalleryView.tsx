@@ -55,20 +55,22 @@ export const GalleryView = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <>
+    <div className="content-center grid gap-8 py-5 grid-cols-1 md:grid-cols-3">
       {Object.keys(images).map((metadata) =>
         images[metadata].map((nft: any) => {
           return (
             <img
+              className='rounded-lg shadow-lg'
+              loading='lazy'
               key={nft.name}
-              width={200}
-              height={200}
+              width={400}
+              height={400}
               src={nft.image}
               alt={nft.name}
             />
           );
         })
       )}
-    </>
+    </div>
   );
 };
